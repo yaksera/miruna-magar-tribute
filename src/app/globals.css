@@ -11,6 +11,10 @@
   --pf-ink-soft: #113229;
   --pf-cream: #f7efe3;
   --pf-muted: #9db3a9;
+  --pf-paper: #f2efe9;
+  --pf-text: #141414;
+  --pf-grey: #6f6b66;
+  --pf-rule: #d6d0c6;
 }
 
 @theme inline {
@@ -23,22 +27,24 @@
   --color-ink-soft: var(--pf-ink-soft);
   --color-cream: var(--pf-cream);
   --color-muted: var(--pf-muted);
-  --font-sans: var(--font-outfit);
+  --color-paper: var(--pf-paper);
+  --color-text: var(--pf-text);
+  --color-grey: var(--pf-grey);
+  --color-rule: var(--pf-rule);
+  --font-sans: var(--font-archivo);
   --font-script: var(--font-dancing);
-  --font-serif: var(--font-fraunces);
-  --font-mono: var(--font-plex-mono);
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 24px;
-  background: var(--pf-ink);
+  background: var(--pf-paper);
 }
 
 body {
-  background: var(--pf-ink);
-  color: var(--pf-cream);
-  font-family: var(--font-outfit), system-ui, sans-serif;
+  background: var(--pf-paper);
+  color: var(--pf-text);
+  font-family: var(--font-archivo), system-ui, sans-serif;
 }
 
 ::selection {
@@ -79,46 +85,11 @@ body {
   cursor: text;
 }
 
-/* ---------- Cinema / film-magazine details ---------- */
-
-/* Film-strip sprocket holes along the top and bottom edge of an element. */
-.sprockets {
-  --hole: rgba(247, 239, 227, 0.14);
-  background-image:
-    radial-gradient(circle at 50% 50%, var(--hole) 0 3.5px, transparent 4px),
-    radial-gradient(circle at 50% 50%, var(--hole) 0 3.5px, transparent 4px);
-  background-size: 22px 22px, 22px 22px;
-  background-position: 0 6px, 0 calc(100% - 6px);
-  background-repeat: repeat-x;
-}
-
-/* Warm paper for the magazine spread. */
-.paper {
-  background-color: #f4ead9;
-  background-image:
-    radial-gradient(rgba(120, 80, 40, 0.06) 1px, transparent 1px),
-    radial-gradient(rgba(120, 80, 40, 0.04) 1px, transparent 1px);
-  background-size: 7px 7px, 13px 13px;
-  background-position: 0 0, 3px 5px;
-}
-
-/* Outlined display numerals. Set --outline to change the stroke colour (currentColor can't be
-   used: the fill is transparent, which would make the stroke transparent too). */
-.outline-type {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--outline, var(--pf-gold));
-}
-
-/* Duotone for trailer stills so every poster shares the site's palette. */
-.duotone {
-  filter: grayscale(1) contrast(1.15) brightness(0.9);
-  mix-blend-mode: luminosity;
-}
-
-/* Dotted leader between credit name and role. */
-.leader {
-  flex: 1;
-  border-bottom: 1px dotted currentColor;
-  opacity: 0.35;
-  transform: translateY(-0.35em);
+/* Condensed poster-style headings (Archivo width axis). */
+.display {
+  font-stretch: 72%;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.88;
+  text-transform: uppercase;
 }

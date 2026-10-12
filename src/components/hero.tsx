@@ -52,8 +52,6 @@ export function Hero() {
       ref={root}
       className="grain relative isolate flex min-h-svh items-stretch overflow-hidden bg-[radial-gradient(110%_80%_at_75%_35%,#fffaf2_0%,var(--pf-cream)_45%,#efe2cf_100%)] text-ink"
     >
-      {/* gold hairline frame */}
-      <div aria-hidden className="pointer-events-none absolute inset-4 rounded-[28px] border border-gold/30 sm:inset-6" />
 
       <div className="mx-auto grid w-full max-w-[1240px] items-end gap-0 px-5 pt-28 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:pt-0">
         <div data-hero-copy-wrap className="relative z-10 self-center pb-10 lg:pb-0">
@@ -69,7 +67,7 @@ export function Hero() {
           <p data-hero-copy className="mt-6 max-w-md text-lg leading-relaxed text-ink/80">
             {profile.tagline}
           </p>
-          <p data-hero-copy className="mt-4 inline-flex rounded-full border border-gold/50 bg-white/60 px-3 py-1 text-xs uppercase tracking-widest text-ink/70">
+          <p data-hero-copy className="mt-4 inline-flex border border-ink/30 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink/70">
             Unofficial fan tribute
           </p>
           <div className="mt-9 flex flex-wrap gap-4">

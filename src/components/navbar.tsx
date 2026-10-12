@@ -5,7 +5,7 @@ import { gsap, MOTION_OK, ScrollTrigger, useGSAP } from "@/lib/gsap";
 
 const LINKS = [
   { id: "films", label: "Films" },
-  { id: "about", label: "Her story" },
+  { id: "about", label: "Biography" },
   { id: "sources", label: "Sources" },
 ];
 
@@ -51,18 +51,18 @@ export function Navbar() {
     <nav
       ref={nav}
       aria-label="Primary"
-      className="fixed left-1/2 top-5 z-50 -translate-x-1/2 rounded-full border border-gold/30 bg-ink/75 p-1.5 shadow-lg shadow-black/10 backdrop-blur-md"
+      className="fixed left-1/2 top-5 z-50 -translate-x-1/2 rounded-full border border-text/10 bg-paper/85 p-1.5 shadow-sm backdrop-blur-md"
     >
       <ul className="relative flex items-center">
-        <span ref={pill} aria-hidden className="invisible absolute inset-y-0 left-0 w-0 rounded-full bg-white" />
+        <span ref={pill} aria-hidden className="invisible absolute inset-y-0 left-0 w-0 rounded-full bg-text" />
         {LINKS.map(({ id, label }) => (
           <li key={id} className="relative">
             <a
               href={`#${id}`}
               data-nav={id}
               aria-current={active === id ? "true" : undefined}
-              className={`block whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition-ui sm:px-6 ${
-                active === id ? "text-red" : "text-white hover:bg-white/15"
+              className={`block whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-ui sm:px-6 ${
+                active === id ? "text-paper" : "text-text hover:bg-text/5"
               }`}
             >
               {label}

@@ -54,9 +54,9 @@ export function TrailerProvider({ children }: { children: ReactNode }) {
       >
         {playing && (
           <figure data-trailer-frame>
-            <figcaption className="mb-3 flex items-end justify-between gap-4 font-mono text-xs uppercase tracking-[0.2em] text-cream/70">
+            <figcaption className="mb-3 flex items-end justify-between gap-4 text-sm text-white/70">
               <span>
-                <span className="text-gold">{playing.trailer.kind}</span> · {playing.title} ({playing.year}) · via{" "}
+                <span className="font-semibold text-white">{playing.title}</span> ({playing.year}) · {playing.trailer.kind} via{" "}
                 {playing.trailer.channel}
               </span>
               <button type="button" onClick={close} aria-label="Close trailer" className="rounded-full p-2 text-cream hover:bg-white/10">

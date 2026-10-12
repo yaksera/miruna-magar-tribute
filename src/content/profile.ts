@@ -16,17 +16,12 @@ export const profile = {
   copy: {
     heroGreeting: "A fan tribute to",
     primaryCta: { label: "Filmography", href: "#films" },
-    secondaryCta: { label: "Her story", href: "#about" },
-    reelEyebrow: "The reel",
-    reelTitle: "Now showing",
-    reelIntro: "Scroll through the films. Every trailer is an official upload.",
-    creditsTitle: "Filmography",
-    aboutEyebrow: "Her story",
-    aboutTitle: "From Hong Kong and London to Nepal’s",
-    aboutTitleScript: "big screen",
-    timelineLabel: "Journey",
-    sourcesEyebrow: "Sources",
-    sourcesTitle: "Facts on this page come from",
+    secondaryCta: { label: "Biography", href: "#about" },
+    filmsTitle: "Filmography",
+    filmsMeta: "14 films · 2018–2025 · trailers are official uploads",
+    aboutTitle: "Biography",
+    timelineLabel: "Timeline",
+    sourcesTitle: "Sources",
   },
 
   about: [
