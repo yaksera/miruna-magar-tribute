@@ -53,7 +53,7 @@ export function Hero() {
       className="grain relative isolate flex min-h-svh items-stretch overflow-hidden bg-[radial-gradient(110%_80%_at_75%_35%,#fbf5ec_0%,#f5eee3_45%,var(--pf-paper)_100%)] text-text"
     >
 
-      <div className="mx-auto grid w-full max-w-[1240px] items-end gap-0 px-5 pt-28 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:pt-0">
+      <div className="mx-auto grid w-full max-w-[1240px] items-end gap-0 px-5 pt-28 sm:px-8 lg:grid-cols-[minmax(0,1fr)_1fr] lg:pt-0">
         <div data-hero-copy-wrap className="relative z-10 self-center pb-10 lg:pb-0">
           <p data-hero-hi className="label text-grey sm:text-sm">
             {profile.copy.heroGreeting}
@@ -90,11 +90,13 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[580px] self-end">
+        {/* Portrait fills the hero: on large screens it stands on the bottom edge at ~94% of the
+            viewport height (capped by width), anchored to the right of the content area. */}
+        <div className="relative -mx-5 w-[calc(100%+2.5rem)] self-end sm:mx-auto sm:w-full sm:max-w-[620px] lg:absolute lg:bottom-0 lg:right-[max(0.5rem,calc((100vw-1240px)/2))] lg:mx-0 lg:w-[min(50vw,calc(94svh*892/848))] lg:max-w-none xl:w-[min(60vw,calc(94svh*892/848))]">
           <div
             data-hero-glow
             aria-hidden
-            className="absolute bottom-[8%] left-1/2 size-[92%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_closest-side,rgba(179,18,46,0.10),rgba(140,100,60,0.08)_60%,transparent)]"
+            className="absolute bottom-[6%] left-1/2 size-[100%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_closest-side,rgba(179,18,46,0.10),rgba(140,100,60,0.08)_60%,transparent)]"
           />
           <div data-hero-char className="relative -mb-1">
             <PoseCharacter className="w-full" />
