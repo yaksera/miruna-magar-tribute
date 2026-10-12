@@ -4,12 +4,14 @@ import { Films } from "@/components/films";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { Sources } from "@/components/sources";
 import { TrailerProvider } from "@/components/trailer-context";
 
 export default function Home() {
   return (
     <TrailerProvider>
+      <ScrollProgress />
       <Cursor />
       <Navbar />
       <main className="flex-1 overflow-x-clip">

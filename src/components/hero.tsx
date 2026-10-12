@@ -50,12 +50,12 @@ export function Hero() {
     <section
       id="top"
       ref={root}
-      className="grain relative isolate flex min-h-svh items-stretch overflow-hidden bg-[radial-gradient(110%_80%_at_75%_35%,#fffaf2_0%,var(--pf-cream)_45%,#efe2cf_100%)] text-ink"
+      className="grain relative isolate flex min-h-svh items-stretch overflow-hidden bg-[radial-gradient(110%_80%_at_75%_35%,#fbf5ec_0%,#f5eee3_45%,var(--pf-paper)_100%)] text-text"
     >
 
       <div className="mx-auto grid w-full max-w-[1240px] items-end gap-0 px-5 pt-28 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:pt-0">
         <div data-hero-copy-wrap className="relative z-10 self-center pb-10 lg:pb-0">
-          <p data-hero-hi className="text-sm font-semibold uppercase tracking-[0.35em] text-emerald sm:text-base">
+          <p data-hero-hi className="label text-grey sm:text-sm">
             {profile.copy.heroGreeting}
           </p>
           <h1
@@ -64,17 +64,17 @@ export function Hero() {
           >
             {profile.name}
           </h1>
-          <p data-hero-copy className="mt-6 max-w-md text-lg leading-relaxed text-ink/80">
+          <p data-hero-copy className="mt-6 max-w-md text-lg leading-relaxed text-text/80">
             {profile.tagline}
           </p>
-          <p data-hero-copy className="mt-4 inline-flex border border-ink/30 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-ink/70">
+          <p data-hero-copy className="label mt-4 inline-flex border border-text/30 px-2 py-0.5 text-text/70">
             Unofficial fan tribute
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
             <a
               data-hero-cta
               href={profile.copy.primaryCta.href}
-              className="group inline-flex items-center gap-2 rounded-full bg-emerald px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-cream shadow-lg shadow-emerald/25 transition-ui hover:-translate-y-0.5 hover:bg-ink"
+              className="label group inline-flex items-center gap-2 bg-text px-7 py-4 text-paper transition-ui hover:-translate-y-0.5 hover:bg-red"
             >
               {profile.copy.primaryCta.label}
               <ArrowDown className="size-4 transition-transform group-hover:translate-y-0.5" />
@@ -82,7 +82,7 @@ export function Hero() {
             <a
               data-hero-cta
               href={profile.copy.secondaryCta.href}
-              className="group inline-flex items-center gap-2 rounded-full border-2 border-red px-7 py-3.5 text-sm font-semibold uppercase tracking-widest text-red transition-ui hover:-translate-y-0.5 hover:bg-red hover:text-cream"
+              className="label group inline-flex items-center gap-2 border border-text px-7 py-4 text-text transition-ui hover:-translate-y-0.5 hover:border-red hover:text-red"
             >
               {profile.copy.secondaryCta.label}
               <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -94,7 +94,7 @@ export function Hero() {
           <div
             data-hero-glow
             aria-hidden
-            className="absolute bottom-[8%] left-1/2 size-[92%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_closest-side,rgba(15,90,70,0.28),rgba(201,162,74,0.12)_60%,transparent)]"
+            className="absolute bottom-[8%] left-1/2 size-[92%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_closest-side,rgba(179,18,46,0.10),rgba(140,100,60,0.08)_60%,transparent)]"
           />
           <div data-hero-char className="relative -mb-1">
             <PoseCharacter className="w-full" />

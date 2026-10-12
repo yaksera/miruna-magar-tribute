@@ -11,10 +11,11 @@
   --pf-ink-soft: #113229;
   --pf-cream: #f7efe3;
   --pf-muted: #9db3a9;
-  --pf-paper: #f2efe9;
-  --pf-text: #141414;
-  --pf-grey: #6f6b66;
-  --pf-rule: #d6d0c6;
+  /* Archive palette: warm paper, warm black, one crimson accent (from her name). */
+  --pf-paper: #efe7da;
+  --pf-text: #1a1714;
+  --pf-grey: #6b6359;
+  --pf-rule: #d4c9b8;
 }
 
 @theme inline {
@@ -89,7 +90,29 @@ body {
 .display {
   font-stretch: 72%;
   font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 0.88;
+  letter-spacing: -0.005em;
+  line-height: 0.9;
   text-transform: uppercase;
+  text-wrap: balance;
+}
+
+/* Small uppercase labels. */
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Gentle grade so thirteen different trailer thumbnails read as one set; full colour on hover. */
+.still {
+  filter: saturate(0.82) contrast(1.06) brightness(0.97) sepia(0.06);
+  transition: filter 0.6s ease;
+}
+.group:hover .still {
+  filter: none;
+}
+
+p {
+  text-wrap: pretty;
 }

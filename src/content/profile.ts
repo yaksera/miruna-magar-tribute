@@ -18,7 +18,7 @@ export const profile = {
     primaryCta: { label: "Filmography", href: "#films" },
     secondaryCta: { label: "Biography", href: "#about" },
     filmsTitle: "Filmography",
-    filmsMeta: "14 films · 2018–2025 · trailers are official uploads",
+    filmsMeta: "14 films, 2018–2025. Every trailer is embedded from its official channel.",
     aboutTitle: "Biography",
     timelineLabel: "Timeline",
     sourcesTitle: "Sources",
@@ -42,9 +42,9 @@ export const profile = {
    */
   films: [
     { year: 2018, title: "Lalpurja", role: "Parpala", note: "Film debut", trailer: { id: "5Rdezm4Qf1w", channel: "Budha Subba Digital", kind: "Trailer" } },
-    { year: 2018, title: "Rose", role: "Sneha" },
-    { year: 2019, title: "Saino", role: "Anu" },
-    { year: 2019, title: "Cha Cha Hui", role: "Sangeeta" },
+    { year: 2018, title: "Rose", role: "Sneha", trailer: { id: "BziU6prtYhc", channel: "OSR Digital", kind: "Trailer" } },
+    { year: 2019, title: "Saino", role: "Anu", trailer: { id: "Rwp8RfsRJ1A", channel: "Bodhi HD", kind: "Trailer" } },
+    { year: 2019, title: "Cha Cha Hui", role: "Sangeeta", trailer: { id: "ihVbgjrPK3o", channel: "OSR Digital", kind: "Trailer" } },
     {
       year: 2022,
       title: "Kabaddi 4: The Final Match",
@@ -75,7 +75,7 @@ export const profile = {
     },
     { year: 2024, title: "Gharjwai", role: "Binjuri", trailer: { id: "1WajDWLXuVU", channel: "Budha Subba Digital", kind: "Trailer" } },
     { year: 2025, title: "Unko Sweater", role: "Phool Gurung", trailer: { id: "8vafCOeuH_A", channel: "ARTMANDU", kind: "Trailer" } },
-    { year: 2025, title: "Janai Harayeko Manchhe" },
+    { year: 2025, title: "Janai Harayeko Manchhe", trailer: { id: "bJl4i00eOas", channel: "OSR Digital", kind: "Trailer" } },
     { year: 2025, title: "Maijharo", trailer: { id: "ckDMJFOVTxU", channel: "OSR Digital", kind: "Trailer" } },
     {
       year: 2025,

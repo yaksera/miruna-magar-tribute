@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/content/profile";
 import { useReveal } from "@/lib/use-reveal";
+import { SectionHeader } from "./section-header";
 
 /** Numbered sources and the fan-site disclaimer. */
 export function Sources() {
@@ -12,18 +13,15 @@ export function Sources() {
 
   return (
     <section id="sources" ref={root} className="bg-paper text-text">
-      <div className="mx-auto grid max-w-[1240px] gap-10 px-5 pb-24 sm:px-8 lg:grid-cols-[1fr_2fr] lg:gap-16">
-        <div className="border-t-2 border-text pt-4">
-          <h2 data-reveal className="text-sm font-semibold uppercase tracking-wide">
-            {profile.copy.sourcesTitle}
-          </h2>
-          <p data-reveal className="mt-4 max-w-sm text-sm leading-relaxed text-grey">
-            A fan-made tribute, not her official website, and not affiliated with her or her representatives. The
-            portrait is an AI-assisted illustration. Trailers are embedded from the films&rsquo; official YouTube
-            channels.
-          </p>
-        </div>
-        <ol className="border-t-2 border-text">
+      <div className="mx-auto max-w-[1240px] px-5 pb-24 sm:px-8">
+        <SectionHeader index="03" title={profile.copy.sourcesTitle} />
+        <div className="grid gap-10 pt-10 lg:grid-cols-[1fr_2fr] lg:gap-16">
+        <p data-reveal className="max-w-sm text-sm leading-relaxed text-grey">
+          A fan-made tribute, not her official website, and not affiliated with her or her representatives. The
+          portrait is an AI-assisted illustration. Trailers are embedded from the films&rsquo; official YouTube
+          channels.
+        </p>
+        <ol className="border-t border-text">
           {profile.sources.map((s, i) => (
             <li key={s.href} data-reveal className="border-b border-rule">
               <a href={s.href} target="_blank" rel="noreferrer" className="group flex items-baseline gap-5 py-4">
@@ -35,6 +33,7 @@ export function Sources() {
             </li>
           ))}
         </ol>
+        </div>
       </div>
     </section>
   );
