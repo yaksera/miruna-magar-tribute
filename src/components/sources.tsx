@@ -1,51 +1,50 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowUpRight, BookOpen } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/content/profile";
 import { useReveal } from "@/lib/use-reveal";
 
+/** Sources and disclaimer, set like the notes at the back of a film programme. */
 export function Sources() {
   const root = useRef<HTMLElement>(null);
   useReveal(root);
 
   return (
-    <section id="sources" ref={root} className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 lg:py-28">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
+    <section id="sources" ref={root} className="paper text-ink">
+      <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[1fr_1.3fr]">
         <div>
-          <p data-reveal className="text-sm font-semibold uppercase tracking-[0.3em] text-gold">
+          <p data-reveal className="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">
             {profile.copy.sourcesEyebrow}
           </p>
-          <h2 data-reveal className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
-            {profile.copy.sourcesTitle}
+          <h2 data-reveal className="mt-3 font-serif text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
+            Programme <em className="font-light text-red">notes</em>
           </h2>
-          <p data-reveal className="mt-6 max-w-md text-cream/70">
-            This is a fan-made tribute celebrating {profile.name}&rsquo;s work. It is not her official website, and it
-            isn&rsquo;t affiliated with her or her representatives. The portrait is an AI-assisted illustration.
+          <p data-reveal className="mt-6 max-w-md font-serif text-lg leading-relaxed text-ink/75">
+            A fan-made tribute celebrating {profile.name}&rsquo;s work. It is not her official website and is not
+            affiliated with her or her representatives. The portrait is an AI-assisted illustration; trailers are
+            embedded from the films&rsquo; official YouTube channels.
           </p>
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {profile.sources.map((s) => (
-            <li key={s.href} data-reveal="right">
+        <ol className="self-end border-t border-ink">
+          {profile.sources.map((s, i) => (
+            <li key={s.href} data-reveal="right" className="border-b border-ink/20">
               <a
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group flex h-full items-start justify-between gap-4 rounded-2xl border border-white/10 bg-ink-soft p-6 transition-ui hover:border-gold/50"
+                className="group flex items-baseline gap-5 py-5 transition-ui hover:text-red"
               >
-                <span className="flex gap-4">
-                  <BookOpen className="mt-0.5 size-5 shrink-0 text-gold" />
-                  <span>
-                    <span className="block text-lg font-semibold">{s.label}</span>
-                    <span className="mt-1 block text-sm text-muted">{s.publisher}</span>
-                  </span>
-                </span>
-                <ArrowUpRight className="size-5 shrink-0 text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold" />
+                <span className="font-mono text-xs text-ink/50">[{i + 1}]</span>
+                <span className="font-serif text-2xl">{s.label}</span>
+                <span aria-hidden className="leader" />
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/60">{s.publisher}</span>
+                <ArrowUpRight className="size-4 shrink-0 self-center transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </section>
   );

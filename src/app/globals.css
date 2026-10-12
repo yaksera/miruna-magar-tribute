@@ -25,6 +25,8 @@
   --color-muted: var(--pf-muted);
   --font-sans: var(--font-outfit);
   --font-script: var(--font-dancing);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-plex-mono);
 }
 
 html {
@@ -75,4 +77,48 @@ body {
 }
 .has-custom-cursor :is(input, textarea) {
   cursor: text;
+}
+
+/* ---------- Cinema / film-magazine details ---------- */
+
+/* Film-strip sprocket holes along the top and bottom edge of an element. */
+.sprockets {
+  --hole: rgba(247, 239, 227, 0.14);
+  background-image:
+    radial-gradient(circle at 50% 50%, var(--hole) 0 3.5px, transparent 4px),
+    radial-gradient(circle at 50% 50%, var(--hole) 0 3.5px, transparent 4px);
+  background-size: 22px 22px, 22px 22px;
+  background-position: 0 6px, 0 calc(100% - 6px);
+  background-repeat: repeat-x;
+}
+
+/* Warm paper for the magazine spread. */
+.paper {
+  background-color: #f4ead9;
+  background-image:
+    radial-gradient(rgba(120, 80, 40, 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(120, 80, 40, 0.04) 1px, transparent 1px);
+  background-size: 7px 7px, 13px 13px;
+  background-position: 0 0, 3px 5px;
+}
+
+/* Outlined display numerals. Set --outline to change the stroke colour (currentColor can't be
+   used: the fill is transparent, which would make the stroke transparent too). */
+.outline-type {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--outline, var(--pf-gold));
+}
+
+/* Duotone for trailer stills so every poster shares the site's palette. */
+.duotone {
+  filter: grayscale(1) contrast(1.15) brightness(0.9);
+  mix-blend-mode: luminosity;
+}
+
+/* Dotted leader between credit name and role. */
+.leader {
+  flex: 1;
+  border-bottom: 1px dotted currentColor;
+  opacity: 0.35;
+  transform: translateY(-0.35em);
 }
