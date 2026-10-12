@@ -29,10 +29,20 @@ All motion respects `prefers-reduced-motion`.
 
 ### Replacing the poses
 
-Generate a new transparent 3×3 pose sheet (same layout: row 1 looks up, row 3 looks down, left column looks to the viewer's left), then run:
+Generate a new transparent 3×3 pose sheet (same layout: row 1 looks up, row 3 looks down, left column looks to the viewer's left), download the [FSRCNN x2 model](https://github.com/Saafke/FSRCNN_Tensorflow/raw/master/models/FSRCNN_x2.pb), then run:
 
 ```bash
-python scripts/slice-poses.py path/to/pose-sheet.webp public/character
+pip install pillow numpy scipy opencv-contrib-python-headless
+python scripts/process-poses.py path/to/pose-sheet.webp public/character FSRCNN_x2.pb
 ```
 
-The script cuts the sheet into nine images and aligns each one to the centre pose by matching the torso (necklace, blouse, shawl), so the body stays still while only the head turns. If your sheet's cells are a different size, adjust `ROW_CUTS` / `COL_CUTS` at the top of the script. It needs Python with Pillow, NumPy and SciPy.
+The script:
+
+1. upscales 2× with a super-resolution model
+2. colour-grades for screen recording (vibrance, gentle contrast curve, midtone lift, slight warmth and fine sharpening, so the portrait stays vivid when a phone films a laptop)
+3. separates the figures along their outlines so shoulders are never clipped
+4. aligns every pose's torso to the centre pose
+5. blends the bottom edge so it never jumps between poses
+6. crops all nine to one shared box
+
+If the printed size changes, update `POSE_W` / `POSE_H` in `src/components/pose-character.tsx`.

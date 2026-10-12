@@ -92,7 +92,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[540px] self-end">
+        <div className="relative mx-auto w-full max-w-[580px] self-end">
           <div
             data-hero-glow
             aria-hidden

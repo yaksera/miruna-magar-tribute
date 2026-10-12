@@ -12,7 +12,9 @@ const THRESHOLD = { x: 0.2, y: 0.22 };
 /** Extra distance needed to turn back, so the pose doesn't flicker on a boundary. */
 const HYSTERESIS = 0.06;
 const IDLE_AFTER_MS = 4000;
-const CANVAS = 440;
+/** Pose images: 2× upscaled, colour-graded, torso-aligned (see scripts/process-poses.py). */
+const POSE_W = 892;
+const POSE_H = 848;
 
 /**
  * An AI-painted character with nine pre-rendered head poses (3×3). The pose closest to the cursor's
@@ -115,17 +117,18 @@ export function PoseCharacter({ className = "" }: { className?: string }) {
   return (
     <div ref={root} role="img" aria-label={`Illustrated portrait of ${profile.name}`} className={className}>
       <div data-breathe>
-        <div data-stage className="relative aspect-square w-full" style={{ transformOrigin: "50% 85%" }}>
+        <div data-stage className="relative aspect-[892/848] w-full" style={{ transformOrigin: "50% 85%" }}>
           {POSES.flat().map((pose) => (
             <Image
               key={pose}
               data-pose={pose}
               src={`/character/${pose}.webp`}
               alt=""
-              width={CANVAS}
-              height={CANVAS}
-              sizes="(min-width: 1024px) 520px, 90vw"
+              width={POSE_W}
+              height={POSE_H}
               preload={pose === "center"}
+              // Already sized, graded and compressed (WebP q90); re-encoding would soften them.
+              unoptimized
               loading="eager"
               draggable={false}
               className={`absolute inset-0 h-full w-full select-none ${pose === "center" ? "" : "invisible opacity-0"}`}
